@@ -24,6 +24,7 @@ envoy_cc_binary(
     deps = [
         "//source/exe:nighthawk_client_entry_lib",
     ],
+    linkopts=['-static'],
 )
 
 envoy_cc_binary(
@@ -33,6 +34,7 @@ envoy_cc_binary(
         "//source/server:http_test_server_filter_config",
         "@envoy//source/exe:envoy_main_entry_lib",
     ],
+    linkopts=['-static', '-lrt'],
 )
 
 envoy_cc_binary(
@@ -41,6 +43,7 @@ envoy_cc_binary(
     deps = [
         "//source/exe:nighthawk_service_entry_lib",
     ],
+    linkopts=['-static'],
 )
 
 envoy_cc_binary(
@@ -49,4 +52,5 @@ envoy_cc_binary(
     deps = [
         "//source/exe:output_transform_main_entry_lib",
     ],
+    linkopts=['-static'],
 )
